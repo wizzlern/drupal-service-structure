@@ -1,0 +1,4 @@
+services:
+  plugin.manager.extra_field_formatter:
+    class: Drupal\extra_field\Plugin\ExtraFieldFormatterManager
+    arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@entity_type.manager']

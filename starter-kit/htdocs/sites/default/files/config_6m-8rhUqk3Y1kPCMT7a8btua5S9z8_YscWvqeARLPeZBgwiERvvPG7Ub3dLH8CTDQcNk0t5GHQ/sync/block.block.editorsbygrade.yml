@@ -1,0 +1,27 @@
+uuid: 5f196576-c22e-4efe-8989-1c966677684b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - we_profile
+  theme:
+    - bartik
+id: editorsbygrade
+theme: bartik
+region: sidebar_first
+weight: -5
+provider: null
+plugin: we_profile_editor_grade
+settings:
+  id: we_profile_editor_grade
+  label: 'Our super stars'
+  provider: we_profile
+  label_display: visible
+  grade: 3_star
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

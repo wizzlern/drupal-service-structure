@@ -1,0 +1,54 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_category"
+        }
+    },
+    "tid": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "77f2a097-2649-4d37-b190-8b6e187e63cd"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "news_category"
+        }
+    ],
+    "name": [
+        {
+            "value": "Showbiz",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 2
+        }
+    ],
+    "changed": [
+        {
+            "value": 1492882372,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

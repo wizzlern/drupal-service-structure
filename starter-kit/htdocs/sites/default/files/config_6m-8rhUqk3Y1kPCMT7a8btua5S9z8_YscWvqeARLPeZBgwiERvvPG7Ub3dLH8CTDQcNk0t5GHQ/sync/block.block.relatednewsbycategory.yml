@@ -1,0 +1,28 @@
+uuid: cae6bf77-81f3-4f6f-964c-1a8f2548856d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - we_news
+  theme:
+    - bartik
+id: relatednewsbycategory
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: we_news_related
+settings:
+  id: we_news_related
+  label: 'Related news'
+  provider: we_news
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

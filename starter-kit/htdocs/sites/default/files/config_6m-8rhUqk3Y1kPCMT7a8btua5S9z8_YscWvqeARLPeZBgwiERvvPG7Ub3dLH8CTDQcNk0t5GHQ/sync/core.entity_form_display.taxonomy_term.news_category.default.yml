@@ -1,0 +1,21 @@
+uuid: f2631d1e-91c6-41e8-b538-c6f0975e892c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_category
+id: taxonomy_term.news_category.default
+targetEntityType: taxonomy_term
+bundle: news_category
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true

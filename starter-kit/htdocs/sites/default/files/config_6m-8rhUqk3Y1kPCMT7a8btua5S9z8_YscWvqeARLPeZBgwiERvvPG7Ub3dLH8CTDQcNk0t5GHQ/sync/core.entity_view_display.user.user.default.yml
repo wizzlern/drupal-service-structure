@@ -1,0 +1,15 @@
+uuid: dcedc9f5-316a-4233-bf97-206ace9fe591
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content: {  }
+hidden:
+  member_for: true

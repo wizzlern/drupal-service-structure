@@ -1,0 +1,37 @@
+uuid: 65f14db6-9df4-489c-8114-302b61567483
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.editor.field_editor_grade
+    - field.field.node.editor.field_editor_picture
+    - image.style.thumbnail
+    - node.type.editor
+  module:
+    - image
+    - options
+    - user
+id: node.editor.teaser
+targetEntityType: node
+bundle: editor
+mode: teaser
+content:
+  field_editor_grade:
+    type: list_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_editor_picture:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+hidden:
+  links: true

@@ -1,0 +1,54 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_category"
+        }
+    },
+    "tid": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4c7e80ad-f881-413a-8b85-8cf888168cb5"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "news_category"
+        }
+    ],
+    "name": [
+        {
+            "value": "Fasion",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 5
+        }
+    ],
+    "changed": [
+        {
+            "value": 1492882372,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

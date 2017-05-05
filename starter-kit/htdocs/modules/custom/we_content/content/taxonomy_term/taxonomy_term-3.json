@@ -1,0 +1,54 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/3?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_category"
+        }
+    },
+    "tid": [
+        {
+            "value": 3
+        }
+    ],
+    "uuid": [
+        {
+            "value": "2b247fb1-2ff5-47dc-9f27-7383936c95d0"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "news_category"
+        }
+    ],
+    "name": [
+        {
+            "value": "Science",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 4
+        }
+    ],
+    "changed": [
+        {
+            "value": 1492882408,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

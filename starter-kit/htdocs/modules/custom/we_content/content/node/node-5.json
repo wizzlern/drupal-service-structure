@@ -1,0 +1,197 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/5?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/news"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_category": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/5?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_editor": [
+            {
+                "href": "http:\/\/default\/node\/12?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 5
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4cd91f65-7411-4035-87d0-6088c3f8423a"
+        }
+    ],
+    "vid": [
+        {
+            "value": 17
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "news"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Algemeen nieuws 1",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9cfcb5c3-cbb7-4998-ae73-31288c12590e"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9cfcb5c3-cbb7-4998-ae73-31288c12590e"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_category": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/5?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_category"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c4855713-8e52-45a4-bb49-453e728f1d18"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_editor": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/node\/12?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/editor"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f65eb39b-d825-49e1-8be4-e7726f4bbeed"
+                    }
+                ]
+            }
+        ]
+    },
+    "created": [
+        {
+            "value": 1493026514,
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1493048000,
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": 1493048000
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_body": [
+        {
+            "value": ".. body ..",
+            "format": "basic_html"
+        }
+    ],
+    "field_date": [
+        {
+            "value": "2017-04-24"
+        }
+    ],
+    "field_summary": [
+        {
+            "value": ".. summary ..."
+        }
+    ]
+}

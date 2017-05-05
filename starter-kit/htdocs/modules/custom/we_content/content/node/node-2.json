@@ -1,0 +1,175 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/2?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/news"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_category": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ccfa4bfe-9972-4d7b-85d8-cffdc779ecba"
+        }
+    ],
+    "vid": [
+        {
+            "value": 2
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "news"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Sportnieuws 2",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9cfcb5c3-cbb7-4998-ae73-31288c12590e"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9cfcb5c3-cbb7-4998-ae73-31288c12590e"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_category": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_category"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0c6b20e6-db9a-4667-b05b-2b4327df51b4"
+                    }
+                ]
+            }
+        ]
+    },
+    "created": [
+        {
+            "value": 1493026356,
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": 1493026389,
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": 1493026389
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_body": [
+        {
+            "value": "... body ...",
+            "format": "basic_html"
+        }
+    ],
+    "field_date": [
+        {
+            "value": "2017-04-20"
+        }
+    ],
+    "field_summary": [
+        {
+            "value": "... summary ..."
+        }
+    ]
+}

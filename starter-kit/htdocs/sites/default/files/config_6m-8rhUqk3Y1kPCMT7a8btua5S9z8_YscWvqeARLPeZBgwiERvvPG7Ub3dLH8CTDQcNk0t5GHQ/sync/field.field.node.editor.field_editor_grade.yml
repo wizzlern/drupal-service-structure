@@ -1,0 +1,21 @@
+uuid: 7ab3a33e-313e-49bf-9c5b-d9df01798988
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_editor_grade
+    - node.type.editor
+  module:
+    - options
+id: node.editor.field_editor_grade
+field_name: field_editor_grade
+entity_type: node
+bundle: editor
+label: 'Editor grade'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

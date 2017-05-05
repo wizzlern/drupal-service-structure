@@ -1,0 +1,48 @@
+uuid: 6de758e4-e284-4915-850a-618c96dfb9e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.editor.field_editor_grade
+    - field.field.node.editor.field_editor_picture
+    - image.style.thumbnail
+    - node.type.editor
+  module:
+    - image
+id: node.editor.default
+targetEntityType: node
+bundle: editor
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_editor_grade:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_editor_picture:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true
+  uid: true

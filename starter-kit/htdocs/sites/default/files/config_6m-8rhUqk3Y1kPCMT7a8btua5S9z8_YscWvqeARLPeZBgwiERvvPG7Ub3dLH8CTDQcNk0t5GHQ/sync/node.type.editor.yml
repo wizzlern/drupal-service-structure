@@ -1,0 +1,17 @@
+uuid: 94a5a6ba-10ce-4aaf-b18d-1947f80cdafe
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Editor profile'
+type: editor
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

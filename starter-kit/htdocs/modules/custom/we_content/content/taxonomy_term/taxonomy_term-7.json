@@ -1,0 +1,54 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_category"
+        }
+    },
+    "tid": [
+        {
+            "value": 7
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a8868b95-8d4d-4305-bb99-dfeaa5e2dc55"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "news_category"
+        }
+    ],
+    "name": [
+        {
+            "value": "Food",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 6
+        }
+    ],
+    "changed": [
+        {
+            "value": 1492882372,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

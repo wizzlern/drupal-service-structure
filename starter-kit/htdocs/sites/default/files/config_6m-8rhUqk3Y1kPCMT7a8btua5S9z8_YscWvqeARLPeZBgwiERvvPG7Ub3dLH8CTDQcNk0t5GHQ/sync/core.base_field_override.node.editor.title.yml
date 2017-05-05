@@ -1,0 +1,18 @@
+uuid: 6464b4e6-3c3b-4c5d-a316-9c747b482eb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.editor
+id: node.editor.title
+field_name: title
+entity_type: node
+bundle: editor
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

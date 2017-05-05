@@ -1,0 +1,8 @@
+name: Wizzlern Example Content
+type: module
+description: 'Contains content for the Wizzlern Example modules.'
+package: Wizzlern
+version: 8.x-1.0
+core: 8.x
+dependencies:
+  - default_content

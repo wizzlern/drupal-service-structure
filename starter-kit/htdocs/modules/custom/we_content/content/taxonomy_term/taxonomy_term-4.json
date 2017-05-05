@@ -1,0 +1,54 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_category"
+        }
+    },
+    "tid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "58fa83c4-0c89-4b59-b056-1e1598a2af36"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "news_category"
+        }
+    ],
+    "name": [
+        {
+            "value": "Internet",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 3
+        }
+    ],
+    "changed": [
+        {
+            "value": 1492882408,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

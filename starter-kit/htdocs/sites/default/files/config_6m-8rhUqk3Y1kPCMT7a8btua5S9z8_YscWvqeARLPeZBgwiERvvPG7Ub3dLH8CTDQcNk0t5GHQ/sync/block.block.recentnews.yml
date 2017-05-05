@@ -1,0 +1,28 @@
+uuid: db1f3690-c366-4375-96eb-07d3bcd2a425
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - we_news
+  theme:
+    - bartik
+id: recentnews
+theme: bartik
+region: sidebar_first
+weight: -7
+provider: null
+plugin: we_news_news
+settings:
+  id: we_news_news
+  label: 'Latest News'
+  provider: we_news
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

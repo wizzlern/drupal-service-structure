@@ -1,0 +1,19 @@
+uuid: e6cb6679-2d31-4d76-a77d-c8620e50c203
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_news_editor
+field_name: field_news_editor
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

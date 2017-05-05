@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function extra_field_entity_extra_field_info() {
+
+  return \Drupal::service('plugin.manager.extra_field_formatter')->fieldInfo();
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function extra_field_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  \Drupal::service('plugin.manager.extra_field_formatter')->entityView($build, $entity, $display, $view_mode);
+}

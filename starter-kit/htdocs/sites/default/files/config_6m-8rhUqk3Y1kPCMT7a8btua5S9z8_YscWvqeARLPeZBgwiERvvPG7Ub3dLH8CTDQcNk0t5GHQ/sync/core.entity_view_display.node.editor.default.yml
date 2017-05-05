@@ -1,0 +1,39 @@
+uuid: de1d2956-ddf1-467e-9f88-d6385544c60a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.editor.field_editor_grade
+    - field.field.node.editor.field_editor_picture
+    - image.style.medium
+    - node.type.editor
+  module:
+    - image
+    - user
+id: node.editor.default
+targetEntityType: node
+bundle: editor
+mode: default
+content:
+  extra_field_all_nodes:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  extra_field_formatted_field:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_editor_picture:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_editor_grade: true
+  links: true

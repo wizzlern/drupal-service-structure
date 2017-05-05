@@ -1,0 +1,38 @@
+uuid: 0e310596-a436-4f2c-8454-41c1f36ecae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_editor_picture
+    - node.type.editor
+  module:
+    - image
+id: node.editor.field_editor_picture
+field_name: field_editor_picture
+entity_type: node
+bundle: editor
+label: Picture
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: editor
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image
