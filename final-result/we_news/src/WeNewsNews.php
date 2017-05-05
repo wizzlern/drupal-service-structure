@@ -3,7 +3,6 @@
 namespace Drupal\we_news;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\node\NodeInterface;
 
 /**
@@ -17,16 +16,10 @@ class WeNewsNews implements WeNewsNewsInterface {
   protected $entityTypeManager;
 
   /**
-   * @var \Drupal\Core\Routing\CurrentRouteMatch
-   */
-  protected $routeMatch;
-
-  /**
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, CurrentRouteMatch $routeMatch) {
+  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
     $this->entityTypeManager = $entityTypeManager;
-    $this->routeMatch = $routeMatch;
   }
 
   /**
@@ -74,26 +67,6 @@ class WeNewsNews implements WeNewsNewsInterface {
     }
 
     return $nodes;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function currentPageNewsCategory() {
-
-    $category = NULL;
-    // Load the node, if we have a {node} in the URL.
-    /** @var \Drupal\node\Entity\Node $node */
-    $node = $this->routeMatch->getParameter('node');
-
-    if ($node && $node->hasField('field_news_category')) {
-      $field = $node->get('field_news_category');
-      if (!$field->isEmpty()) {
-        $category = $field->entity;
-      }
-    }
-
-    return $category;
   }
 
 }

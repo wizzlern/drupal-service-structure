@@ -52,6 +52,8 @@ class WeNewsRecentNewsByGroup extends BlockBase implements ContainerFactoryPlugi
    */
   public function build() {
 
+    $group = $this->configuration['group'];
+
     $build = ['#markup' => 'TODO News by category group'];
 
     return $build;

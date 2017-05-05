@@ -93,15 +93,12 @@ class WeProfileProfile implements WeProfileProfileInterface {
   /**
    * {@inheritdoc}
    */
-  public function currentPageEditor() {
+  public function nodeEditor($entity) {
 
     $editor = NULL;
-    // Load the node, if we have a {node} in the URL.
-    /** @var \Drupal\node\Entity\Node $node */
-    $node = $this->routeMatch->getParameter('node');
 
-    if ($node && $node->hasField('field_news_editor')) {
-      $field = $node->get('field_news_editor');
+    if ($entity->hasField('field_news_editor')) {
+      $field = $entity->get('field_news_editor');
       if (!$field->isEmpty()) {
         $editor = $field->entity;
       }

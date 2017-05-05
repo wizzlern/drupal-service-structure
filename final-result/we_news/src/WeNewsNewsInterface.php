@@ -31,12 +31,4 @@ interface WeNewsNewsInterface {
    */
   public function newsByCategory($categories, $limit = 10);
 
-  /**
-   * Returns the news categories of the current page node.
-   *
-   * @return \Drupal\Core\Entity\ContentEntityInterface|null
-   *   News categories taxonomy term.
-   */
-  public function currentPageNewsCategory();
-
 }

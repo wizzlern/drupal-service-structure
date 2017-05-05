@@ -2,15 +2,8 @@
 
 namespace Drupal\we_news\Plugin\Block;
 
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Routing\RedirectDestinationTrait;
-use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Routing\UrlGeneratorTrait;
-use Drupal\Core\Url;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Block\BlockBase;
 use Drupal\we_news\WeNewsNewsCategoryInterface;
 use Drupal\we_news\WeNewsNewsInterface;

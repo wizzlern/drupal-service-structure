@@ -35,11 +35,13 @@ interface WeProfileProfileInterface {
   public function editorsByGrade($grade);
 
   /**
-   * Returns the editor of the current page news node.
+   * Returns the editor of the entity.
    *
-   * @return \Drupal\Core\Entity\ContentEntityInterface|null
+   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+   *
+   * @return \Drupal\Core\Entity\ContentEntityInterface|null Editor node.
    *   Editor node.
    */
-  public function currentPageEditor();
+  public function nodeEditor($entity);
 
 }

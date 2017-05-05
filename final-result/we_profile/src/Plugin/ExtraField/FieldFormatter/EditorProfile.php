@@ -2,6 +2,7 @@
 
 namespace Drupal\we_profile\Plugin\ExtraField\FieldFormatter;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -68,9 +69,9 @@ class EditorProfile extends ExtraFieldFormatterBase implements ContainerFactoryP
   /**
    * {@inheritdoc}
    */
-  public function view(EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  public function view(ContentEntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
 
-    $profile = $this->profile->currentPageEditor();
+    $profile = $this->profile->nodeEditor($entity);
     $build = [];
 
     if ($profile) {

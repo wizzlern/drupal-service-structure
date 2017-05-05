@@ -102,14 +102,15 @@ class WeProfileEditorsByGrade extends BlockBase implements ContainerFactoryPlugi
     $profiles = $this->profile->editorsByGrade($this->configuration['grade']);
 
     foreach ($profiles as $profile) {
-      $items[] = $profile->toLink();
+      $items[] = $this->entityTypeManager
+        ->getViewBuilder('node')
+        ->view($profile, 'teaser');
     }
 
     $build = [
       '#theme' => 'item_list',
       '#items' => $items,
       // @todo Add cache tag to invalidate cache when editor is added.
-      // @todo Add cache tag for each listed profile.
       '#cache' => ['max-age' => 0],
     ];
 
