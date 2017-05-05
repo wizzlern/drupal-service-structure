@@ -1,0 +1,9 @@
+name: Wizzlern Example News
+type: module
+description: 'An example of using services to structure your code.'
+package: Wizzlern
+version: 8.x-1.0
+core: 8.x
+dependencies:
+  - taxonomy
+  - node
