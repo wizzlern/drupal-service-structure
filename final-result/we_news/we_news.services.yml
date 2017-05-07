@@ -1,7 +1,7 @@
 services:
-  we_news.news:
-    class: \Drupal\we_news\WeNewsNews
+  we_news.content:
+    class: \Drupal\we_news\NewsContent
     arguments: ['@entity_type.manager']
-  we_news.news_category:
-    class: \Drupal\we_news\WeNewsNewsCategory
+  we_news.category:
+    class: \Drupal\we_news\NewsCategory
     arguments: ['@entity_type.manager', '@current_route_match']

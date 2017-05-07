@@ -5,7 +5,7 @@ namespace Drupal\we_news;
 /**
  * Interface for WeNewsNews.
  */
-interface WeNewsNewsInterface {
+interface NewsContentInterface {
 
   /**
    * Returns the latest news nodes.

@@ -5,8 +5,8 @@ namespace Drupal\we_news\Plugin\Block;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Block\BlockBase;
-use Drupal\we_news\WeNewsNewsCategoryInterface;
-use Drupal\we_news\WeNewsNewsInterface;
+use Drupal\we_news\NewsCategoryInterface;
+use Drupal\we_news\NewsContentInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -26,12 +26,12 @@ class WeNewsRelatedNews extends BlockBase implements ContainerFactoryPluginInter
   protected $entityTypeManager;
 
   /**
-   * @var \Drupal\we_news\WeNewsNewsInterface
+   * @var \Drupal\we_news\NewsContentInterface
    */
-  protected $news;
+  protected $newsContent;
 
   /**
-   * @var \Drupal\we_news\WeNewsNewsCategoryInterface
+   * @var \Drupal\we_news\NewsCategoryInterface
    */
   protected $newsCategory;
 
@@ -40,16 +40,16 @@ class WeNewsRelatedNews extends BlockBase implements ContainerFactoryPluginInter
    * @param string $plugin_id
    * @param mixed $plugin_definition
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   * @param \Drupal\we_news\WeNewsNewsInterface $news_manager
-   * @param \Drupal\we_news\WeNewsNewsCategoryInterface $news_category_manager
+   * @param \Drupal\we_news\NewsContentInterface $news_content
+   * @param \Drupal\we_news\NewsCategoryInterface $news_category
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, WeNewsNewsInterface $news_manager, WeNewsNewsCategoryInterface $news_category_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, NewsContentInterface $news_content, NewsCategoryInterface $news_category) {
 
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->entityTypeManager = $entity_type_manager;
-    $this->news = $news_manager;
-    $this->newsCategory = $news_category_manager;
+    $this->newsContent = $news_content;
+    $this->newsCategory = $news_category;
   }
 
   /**
@@ -57,7 +57,7 @@ class WeNewsRelatedNews extends BlockBase implements ContainerFactoryPluginInter
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
 
-    return new static($configuration, $plugin_id, $plugin_definition, $container->get('entity_type.manager'), $container->get('we_news.news'), $container->get('we_news.news_category'));
+    return new static($configuration, $plugin_id, $plugin_definition, $container->get('entity_type.manager'), $container->get('we_news.content'), $container->get('we_news.category'));
   }
 
   /**
@@ -67,7 +67,7 @@ class WeNewsRelatedNews extends BlockBase implements ContainerFactoryPluginInter
 
     $items = [];
     $category = $this->newsCategory->currentPageCategory();
-    $news = $this->news->newsByCategory($category->id());
+    $news = $this->newsContent->newsByCategory($category->id());
 
     foreach ($news as $node) {
       $items[] = $this->entityTypeManager

@@ -5,7 +5,7 @@ namespace Drupal\we_news;
 /**
  * Interface for WeNewsNewsCategory.
  */
-interface WeNewsNewsCategoryInterface {
+interface NewsCategoryInterface {
 
   /**
    * News category vocabulary machine name.

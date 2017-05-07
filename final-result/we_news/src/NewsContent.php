@@ -8,7 +8,7 @@ use Drupal\node\NodeInterface;
 /**
  * Provides services for the News content type.
  */
-class WeNewsNews implements WeNewsNewsInterface {
+class NewsContent implements NewsContentInterface {
 
   /**
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface

@@ -9,7 +9,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 /**
  * Provides services for the News Category taxonomy terms.
  */
-class WeNewsNewsCategory implements WeNewsNewsCategoryInterface {
+class NewsCategory implements NewsCategoryInterface {
 
   use StringTranslationTrait;
 

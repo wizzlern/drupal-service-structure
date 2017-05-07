@@ -5,7 +5,7 @@ namespace Drupal\we_news\Plugin\Block;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Block\BlockBase;
-use Drupal\we_news\WeNewsNewsInterface;
+use Drupal\we_news\NewsContentInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -25,22 +25,22 @@ class WeNewsRecentNews extends BlockBase implements ContainerFactoryPluginInterf
   protected $entityTypeManager;
 
   /**
-   * @var \Drupal\we_news\WeNewsNewsInterface
+   * @var \Drupal\we_news\NewsContentInterface
    */
-  protected $news;
+  protected $newsContent;
 
   /**
    * @param array $configuration
    * @param string $plugin_id
    * @param mixed $plugin_definition
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   * @param \Drupal\we_news\WeNewsNewsInterface $news_manager
+   * @param \Drupal\we_news\NewsContentInterface $news_content
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, WeNewsNewsInterface $news_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, NewsContentInterface $news_content) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->entityTypeManager = $entity_type_manager;
-    $this->news = $news_manager;
+    $this->newsContent = $news_content;
   }
 
   /**
@@ -52,7 +52,7 @@ class WeNewsRecentNews extends BlockBase implements ContainerFactoryPluginInterf
       $plugin_id,
       $plugin_definition,
       $container->get('entity_type.manager'),
-      $container->get('we_news.news')
+      $container->get('we_news.content')
     );
   }
 
@@ -62,7 +62,7 @@ class WeNewsRecentNews extends BlockBase implements ContainerFactoryPluginInterf
   public function build() {
 
     $items = [];
-    $nodes = $this->news->latestNews(5);
+    $nodes = $this->newsContent->latestNews(5);
 
     foreach ($nodes as $node) {
       $items[] = $this->entityTypeManager
