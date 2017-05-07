@@ -4,7 +4,6 @@ namespace Drupal\we_profile\Plugin\ExtraField\FieldFormatter;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\extra_field\Plugin\ExtraFieldFormatterBase;
@@ -35,8 +34,6 @@ class EditorProfile extends ExtraFieldFormatterBase implements ContainerFactoryP
   protected $profile;
 
   /**
-   * Constructs a Drupal\Component\Plugin\PluginBase object.
-   *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
@@ -57,10 +54,7 @@ class EditorProfile extends ExtraFieldFormatterBase implements ContainerFactoryP
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
+    return new static($configuration, $plugin_id, $plugin_definition,
       $container->get('entity_type.manager'),
       $container->get('we_profile.profile')
     );
