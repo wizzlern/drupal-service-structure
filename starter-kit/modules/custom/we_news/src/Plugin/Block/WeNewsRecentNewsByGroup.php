@@ -50,6 +50,43 @@ class WeNewsRecentNewsByGroup extends BlockBase implements ContainerFactoryPlugi
   /**
    * {@inheritdoc}
    */
+  public function defaultConfiguration() {
+
+    return [
+      'group' => '',
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockForm($form, FormStateInterface $form_state) {
+
+    $config = $this->configuration;
+    $options = ['popular' => 'TODO 1', 'tech' => 'TODO 2'];
+
+    $form['group'] = [
+      '#type' => 'radios',
+      '#title' => $this->t('News category'),
+      '#default_value' => $config['group'],
+      '#options' => $options,
+      '#description' => $this->t('The category of news to display.'),
+      '#required' => TRUE,
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    $this->configuration['group'] = $form_state->getValue('group');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
 
     $group = $this->configuration['group'];

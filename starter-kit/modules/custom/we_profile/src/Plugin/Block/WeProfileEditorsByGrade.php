@@ -90,6 +90,8 @@ class WeProfileEditorsByGrade extends BlockBase implements ContainerFactoryPlugi
    */
   public function build() {
 
+    $grade = $this->configuration['grade'];
+
     $build = ['#markup' => 'TODO Editors by grade'];
 
     return $build;
