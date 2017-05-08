@@ -39,6 +39,14 @@ $nids = $query->execute();
 // A condition to filter editor profiles by $grade.
 $query->condition('field_editor_grade', $grade);
 
+// Get news articles that are not yet archived after 1 year.
+$threshold = strtotime('-1 year', $_SERVER['REQUEST_TIME']);
+$query = $this->entityTypeManager->getStorage('node')->getQuery()
+  ->condition('type', 'news')
+  ->condition('field_news_archive', 0)
+  ->condition('created', $threshold, '<');
+$nids = $query->execute();
+
 /*
  * Load data from storage.
  */
@@ -49,17 +57,17 @@ $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
 // Get the node object of the current page.
 $node = $this->routeMatch->getParameter('node');
 
-// Get the News category ($category) that is used by a News article ($node).
-if ($node && $node->hasField('field_news_category')) {
-  $field = $node->get('field_news_category');
+// Get the News category ($category) that is used by a News article ($entity).
+if ($entity->hasField('field_news_category')) {
+  $field = $entity->get('field_news_category');
   if (!$field->isEmpty()) {
     $category = $field->entity;
   }
 }
 
-// Get the Editor node ($editor) that is referenced by a News article ($node).
-if ($node && $node->hasField('field_news_editor')) {
-  $field = $node->get('field_news_editor');
+// Get the Editor node ($editor) that is referenced by a News article ($entity).
+if ($entity->hasField('field_news_editor')) {
+  $field = $entity->get('field_news_editor');
   if (!$field->isEmpty()) {
     $editor = $field->entity;
   }
@@ -86,6 +94,14 @@ foreach ($terms as $term) {
 $grades = $this->entityFieldManager
   ->getFieldStorageDefinitions('node')['field_editor_grade']
   ->getSetting('allowed_values');
+
+// Mark news articles as archived.
+foreach ($nids as $nid) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $this->entityTypeManager->getStorage('node')->load($nid);
+  $node->set('field_news_archive', 1);
+  $node->save();
+}
 
 /*
  * Building the output.
