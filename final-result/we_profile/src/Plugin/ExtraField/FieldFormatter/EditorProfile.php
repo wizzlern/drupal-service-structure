@@ -7,7 +7,7 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\extra_field\Plugin\ExtraFieldFormatterBase;
-use Drupal\we_profile\WeProfileProfileInterface;
+use Drupal\we_profile\weProfileContentInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -29,7 +29,7 @@ class EditorProfile extends ExtraFieldFormatterBase implements ContainerFactoryP
   protected $entityTypeManager;
 
   /**
-   * @var \Drupal\we_profile\WeProfileProfileInterface
+   * @var \Drupal\we_profile\weProfileContentInterface
    */
   protected $profile;
 
@@ -41,9 +41,9 @@ class EditorProfile extends ExtraFieldFormatterBase implements ContainerFactoryP
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   * @param \Drupal\we_profile\WeProfileProfileInterface $profile
+   * @param \Drupal\we_profile\weProfileContentInterface $profile
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, WeProfileProfileInterface $profile) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, weProfileContentInterface $profile) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->entityTypeManager = $entity_type_manager;
@@ -56,7 +56,7 @@ class EditorProfile extends ExtraFieldFormatterBase implements ContainerFactoryP
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition,
       $container->get('entity_type.manager'),
-      $container->get('we_profile.profile')
+      $container->get('we_profile.content')
     );
   }
 

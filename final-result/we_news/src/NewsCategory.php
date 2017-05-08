@@ -2,7 +2,9 @@
 
 namespace Drupal\we_news;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
@@ -19,16 +21,23 @@ class NewsCategory implements NewsCategoryInterface {
   protected $entityTypeManager;
 
   /**
+   * @var string
+   */
+  protected $currentLanguageCode;
+
+  /**
    * @var \Drupal\Core\Routing\CurrentRouteMatch
    */
   protected $routeMatch;
 
   /**
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   * @param \Drupal\Core\Language\LanguageManagerInterface $languageManager
    * @param \Drupal\Core\Routing\CurrentRouteMatch $routeMatch
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, CurrentRouteMatch $routeMatch) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, LanguageManagerInterface $languageManager, CurrentRouteMatch $routeMatch) {
     $this->entityTypeManager = $entity_type_manager;
+    $this->currentLanguageCode = $languageManager->getCurrentLanguage()->getId();
     $this->routeMatch = $routeMatch;
   }
 
@@ -100,15 +109,11 @@ class NewsCategory implements NewsCategoryInterface {
   /**
    * {@inheritdoc}
    */
-  public function currentPageCategory() {
+  public function entityCategory(ContentEntityInterface $entity) {
 
     $category = NULL;
-    // Load the node, if we have a {node} in the URL.
-    /** @var \Drupal\node\Entity\Node $node */
-    $node = $this->routeMatch->getParameter('node');
-
-    if ($node && $node->hasField('field_news_category')) {
-      $field = $node->get('field_news_category');
+    if ($entity->hasField('field_news_category')) {
+      $field = $entity->get('field_news_category');
       if (!$field->isEmpty()) {
         $category = $field->entity;
       }

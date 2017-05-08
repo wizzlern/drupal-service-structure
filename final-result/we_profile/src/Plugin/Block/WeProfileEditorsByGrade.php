@@ -6,7 +6,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Block\BlockBase;
-use Drupal\we_profile\WeProfileProfileInterface;
+use Drupal\we_profile\weProfileContentInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -26,7 +26,7 @@ class WeProfileEditorsByGrade extends BlockBase implements ContainerFactoryPlugi
   protected $entityTypeManager;
 
   /**
-   * @var \Drupal\we_profile\WeProfileProfileInterface
+   * @var \Drupal\we_profile\weProfileContentInterface
    */
   protected $profile;
 
@@ -35,9 +35,9 @@ class WeProfileEditorsByGrade extends BlockBase implements ContainerFactoryPlugi
    * @param string $plugin_id
    * @param mixed $plugin_definition
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   * @param \Drupal\we_profile\WeProfileProfileInterface $profile
+   * @param \Drupal\we_profile\weProfileContentInterface $profile
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, WeProfileProfileInterface $profile) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, weProfileContentInterface $profile) {
 
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
@@ -52,7 +52,7 @@ class WeProfileEditorsByGrade extends BlockBase implements ContainerFactoryPlugi
 
     return new static($configuration, $plugin_id, $plugin_definition,
       $container->get('entity_type.manager'),
-      $container->get('we_profile.profile')
+      $container->get('we_profile.content')
     );
   }
 

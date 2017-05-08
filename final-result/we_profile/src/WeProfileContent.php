@@ -9,7 +9,7 @@ use Drupal\Core\Routing\CurrentRouteMatch;
 /**
  * Provides services for the User Profile.
  */
-class WeProfileProfile implements WeProfileProfileInterface {
+class WeProfileContent implements weProfileContentInterface {
 
   /**
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface

@@ -3,9 +3,9 @@
 namespace Drupal\we_profile;
 
 /**
- * Interface for WeProfileProfile.
+ * Interface for weProfileContent.
  */
-interface WeProfileProfileInterface {
+interface weProfileContentInterface {
 
   /**
    * Returns all editor grades.

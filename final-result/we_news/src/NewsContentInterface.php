@@ -3,7 +3,7 @@
 namespace Drupal\we_news;
 
 /**
- * Interface for WeNewsNews.
+ * Interface for NewsContent.
  */
 interface NewsContentInterface {
 

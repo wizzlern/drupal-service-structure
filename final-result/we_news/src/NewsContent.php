@@ -2,7 +2,9 @@
 
 namespace Drupal\we_news;
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\node\NodeInterface;
 
 /**
@@ -16,10 +18,16 @@ class NewsContent implements NewsContentInterface {
   protected $entityTypeManager;
 
   /**
+   * @var string
+   */
+  protected $currentLanguageCode;
+
+  /**
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, LanguageManagerInterface $languageManager) {
     $this->entityTypeManager = $entityTypeManager;
+    $this->currentLanguageCode = $languageManager->getCurrentLanguage()->getId();
   }
 
   /**
@@ -39,6 +47,12 @@ class NewsContent implements NewsContentInterface {
     $nodes = [];
     if ($nids) {
       $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
+    }
+
+    foreach ($nodes as $key => $node) {
+      if ($node->hasTranslation($this->currentLanguageCode)) {
+        $nodes[$key] = $node->getTranslation($this->currentLanguageCode);
+      }
     }
 
     return $nodes;
@@ -64,6 +78,12 @@ class NewsContent implements NewsContentInterface {
     $nodes = [];
     if ($nids) {
       $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
+    }
+
+    foreach ($nodes as $key => $node) {
+      if ($node->hasTranslation($this->currentLanguageCode)) {
+        $nodes[$key] = $node->getTranslation($this->currentLanguageCode);
+      }
     }
 
     return $nodes;

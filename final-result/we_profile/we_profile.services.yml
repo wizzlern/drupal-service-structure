@@ -1,4 +1,4 @@
 services:
-  we_profile.profile:
-    class: \Drupal\we_profile\WeProfileProfile
+  we_profile.content:
+    class: \Drupal\we_profile\WeProfileContent
     arguments: ['@entity_type.manager', '@current_route_match', '@entity_field.manager']

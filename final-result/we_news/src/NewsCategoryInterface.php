@@ -2,8 +2,10 @@
 
 namespace Drupal\we_news;
 
+use Drupal\Core\Entity\ContentEntityInterface;
+
 /**
- * Interface for WeNewsNewsCategory.
+ * Interface for NewsCategory.
  */
 interface NewsCategoryInterface {
 
@@ -62,10 +64,13 @@ interface NewsCategoryInterface {
   public function categoryNamesByGroup($group_name);
 
   /**
-   * Returns the news category of the current page node.
+   * Returns the news category of a node.
    *
-   * @return \Drupal\taxonomy\Entity\Term|null
+   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+   *
+   * @return \Drupal\taxonomy\Entity\Term|null News category term.
    *   News category term.
    */
-  public function currentPageCategory();
+  public function entityCategory(ContentEntityInterface $entity);
+
 }
