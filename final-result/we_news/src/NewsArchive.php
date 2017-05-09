@@ -3,7 +3,6 @@
 namespace Drupal\we_news;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\node\NodeInterface;
 
 /**
  * Provides services for the News content type.
@@ -23,7 +22,7 @@ class NewsArchive implements NewsArchiveInterface {
   }
 
   /**
-   * Performs cron tasks for news content.
+   * {@inheritdoc}
    */
   public function onCron() {
 

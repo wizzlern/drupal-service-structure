@@ -7,9 +7,4 @@ namespace Drupal\we_news;
  */
 interface NewsArchiveInterface {
 
-  /**
-   * Performs cron tasks for news content.
-   */
-  public function onCron();
-
 }

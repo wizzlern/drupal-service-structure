@@ -1,0 +1,4 @@
+services:
+  we_news.archive:
+    class: \Drupal\we_news\NewsArchive
+    arguments: ['@entity_type.manager']
