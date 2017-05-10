@@ -1,0 +1,27 @@
+uuid: 841521f2-ddf8-477d-be4d-dede70e623d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - we_news
+  theme:
+    - bartik
+id: newsbycategorygroup
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: we_news_news_group
+settings:
+  id: we_news_news_group
+  label: 'Popular news'
+  provider: we_news
+  label_display: visible
+  group: popular
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
