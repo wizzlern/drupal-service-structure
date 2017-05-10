@@ -109,6 +109,20 @@ class NewsCategory implements NewsCategoryInterface {
   /**
    * {@inheritdoc}
    */
+  public function currentPageCategory() {
+
+    $category = NULL;
+    $node = $this->routeMatch->getParameter('node');
+    if ($node) {
+      $category = $this->entityCategory($node);
+    }
+
+    return $category;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function entityCategory(ContentEntityInterface $entity) {
 
     $category = NULL;

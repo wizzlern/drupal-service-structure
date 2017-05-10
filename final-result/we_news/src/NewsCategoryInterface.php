@@ -64,6 +64,14 @@ interface NewsCategoryInterface {
   public function categoryNamesByGroup($group_name);
 
   /**
+   * Returns the news category of the current node.
+   *
+   * @return \Drupal\taxonomy\Entity\Term|null News category term.
+   *   News category term.
+   */
+  public function currentPageCategory();
+
+  /**
    * Returns the news category of a node.
    *
    * @param \Drupal\Core\Entity\ContentEntityInterface $entity
