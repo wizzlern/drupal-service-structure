@@ -244,7 +244,7 @@
  *   );
  * @endcode
  */
-$config_directories = array();
+$config_directories[CONFIG_SYNC_DIRECTORY] = DRUPAL_ROOT . '/config-install';
 
 /**
  * Settings:
