@@ -1,7 +1,7 @@
 # Create a block that shows the latest news.
 A list of recently added news article teasers.
 
-TIP: Use code from code_snippets.php.
+Copy PHP code from code_snippets.php to complete this exercise.
 
 - Work in the block class file at modules/custom/we_news/src/Plugin/Block/WeNewsRecentNews.php
 - Replace the mock output in the WeNewsRecentNews::build.

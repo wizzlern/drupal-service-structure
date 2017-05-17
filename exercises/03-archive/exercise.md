@@ -1,7 +1,7 @@
 # Create a cron job that archives old news articles.
 Flag news articles (field_news_archive) that are created more than one year ago.
 
-TIP: Use code from code_snippets.php.
+Copy PHP code from code_snippets.php to complete this exercise.
 
 - Work with we_news_cron() at modules/custom/we_news/we_news.module
 - The cron code should do the following:
