@@ -244,7 +244,7 @@
  *   );
  * @endcode
  */
-$config_directories[CONFIG_SYNC_DIRECTORY] = DRUPAL_ROOT . '/config-install';
+$config_directories[CONFIG_SYNC_DIRECTORY] = DRUPAL_ROOT . '/profiles/config_installer/config/wizzlern_example';
 
 /**
  * Settings:
