@@ -25,7 +25,7 @@ Create a Drupal site with configuration and content for the workshop.
   - Use the provided (modified) sites/default/default.settings.php.
   - The sites/default/settings.local.php will be included by settings.php
 - Install Drupal using the installation profile.
-  - Verify in the step 'Upload config', the Synchronisation directory is /path/to/drupal-root/config-install
+  - Verify in the step 'Upload config', the Synchronisation directory is: /path/to/drupal-root/profiles/config_installer/config/wizzlern_example
 - Check the Status report page and fix any errors.
 - Check that the site contains a News content type.
 - Check that the site contains News nodes.
