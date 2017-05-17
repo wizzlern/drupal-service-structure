@@ -173,10 +173,17 @@ class ExtraFieldFormatterManager extends DefaultPluginManager implements ExtraFi
       $bundleType = $this->entityTypeManager
         ->getDefinition($entityType)
         ->getBundleEntityType();
-      $this->entityBundles[$entityType] = $this->entityTypeManager
-        ->getStorage($bundleType)
-        ->getQuery()
-        ->execute();
+
+      if ($bundleType) {
+        $bundles = $this->entityTypeManager
+          ->getStorage($bundleType)
+          ->getQuery()
+          ->execute();
+      }
+      else {
+        $bundles = [$entityType => $entityType];
+      }
+      $this->entityBundles[$entityType] = $bundles;
     }
 
     return $this->entityBundles[$entityType];
