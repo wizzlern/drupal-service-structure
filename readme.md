@@ -1,5 +1,7 @@
 # More code, less spaghetti
 
+**Alert: This code is not ready for the workshop yet. Try it, but come back later for the final version.**
+
 This code is part of a workshop developed by [Wizzlern](https://wizzlern.nl) specially for the [DrupalJam](https://drupaljam.nl) 2017. The Dutch annual Drupal gathering.
 
 Prepare for the workshop by **downloading this code** and **setting-up a Drupal 8 site** with the included starter kit. This package contains all the code you need for the workshop. 
