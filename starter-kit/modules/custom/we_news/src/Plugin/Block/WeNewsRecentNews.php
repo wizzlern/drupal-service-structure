@@ -5,6 +5,7 @@ namespace Drupal\we_news\Plugin\Block;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Block\BlockBase;
+use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -52,7 +53,32 @@ class WeNewsRecentNews extends BlockBase implements ContainerFactoryPluginInterf
    */
   public function build() {
 
-    $build = ['#markup' => 'TODO Recent news'];
+    // Query 5 recent news articles.
+    $query = $this->entityTypeManager->getStorage('node')->getQuery()
+      ->condition('status', NodeInterface::PUBLISHED)
+      ->condition('type', 'news')
+      ->sort('created', 'DESC')
+      ->range(0, 5);
+    $nids = $query->execute();
+
+    // Load Node objects.
+    $nodes = $this->entityTypeManager->getStorage('node')
+      ->loadMultiple($nids);
+
+    // Build node Teaser view mode.
+    $items = [];
+    foreach ($nodes as $node) {
+      $items[] = $this->entityTypeManager->getViewBuilder('node')
+        ->view($node, 'teaser');
+    }
+
+    // Build an HTML list for display.
+    $build = [
+      '#theme' => 'item_list',
+      '#items' => $items,
+      // @todo Add cache tag to invalidate when an item is added.
+      '#cache' => ['max-age' => 0],
+    ];
 
     return $build;
   }

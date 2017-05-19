@@ -39,4 +39,6 @@ content:
 hidden:
   field_body: true
   field_date: true
+  field_news_archive: true
   field_news_editor: true
+  we_news_related_news: true

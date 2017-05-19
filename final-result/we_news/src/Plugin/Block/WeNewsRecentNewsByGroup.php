@@ -58,7 +58,14 @@ class WeNewsRecentNewsByGroup extends BlockBase implements ContainerFactoryPlugi
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
 
-    return new static($configuration, $plugin_id, $plugin_definition, $container->get('entity_type.manager'), $container->get('we_news.content'), $container->get('we_news.category'));
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('entity_type.manager'),
+      $container->get('we_news.content'),
+      $container->get('we_news.category')
+    );
   }
 
   /**

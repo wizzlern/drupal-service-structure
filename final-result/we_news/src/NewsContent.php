@@ -2,9 +2,8 @@
 
 namespace Drupal\we_news;
 
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\node\NodeInterface;
 
 /**
@@ -18,16 +17,10 @@ class NewsContent implements NewsContentInterface {
   protected $entityTypeManager;
 
   /**
-   * @var string
-   */
-  protected $currentLanguageCode;
-
-  /**
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, LanguageManagerInterface $languageManager) {
+  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
     $this->entityTypeManager = $entityTypeManager;
-    $this->currentLanguageCode = $languageManager->getCurrentLanguage()->getId();
   }
 
   /**
@@ -47,12 +40,6 @@ class NewsContent implements NewsContentInterface {
     $nodes = [];
     if ($nids) {
       $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
-    }
-
-    foreach ($nodes as $key => $node) {
-      if ($node->hasTranslation($this->currentLanguageCode)) {
-        $nodes[$key] = $node->getTranslation($this->currentLanguageCode);
-      }
     }
 
     return $nodes;
@@ -80,13 +67,22 @@ class NewsContent implements NewsContentInterface {
       $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
     }
 
-    foreach ($nodes as $key => $node) {
-      if ($node->hasTranslation($this->currentLanguageCode)) {
-        $nodes[$key] = $node->getTranslation($this->currentLanguageCode);
-      }
-    }
-
     return $nodes;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getCategory(ContentEntityInterface $entity) {
+
+    $category = NULL;
+    if ($entity->hasField('field_news_category')) {
+      $field = $entity->get('field_news_category');
+      if (!$field->isEmpty()) {
+        $category = $field->entity;
+      }
+    }
+
+    return $category;
+  }
 }

@@ -15,16 +15,6 @@ targetEntityType: node
 bundle: editor
 mode: default
 content:
-  extra_field_all_nodes:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  extra_field_formatted_field:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_editor_picture:
     weight: 1
     label: hidden

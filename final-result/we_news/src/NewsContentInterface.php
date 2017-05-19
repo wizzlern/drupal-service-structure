@@ -2,6 +2,8 @@
 
 namespace Drupal\we_news;
 
+use Drupal\Core\Entity\ContentEntityInterface;
+
 /**
  * Interface for NewsContent.
  */
@@ -31,4 +33,13 @@ interface NewsContentInterface {
    */
   public function newsByCategory($categories, $limit = 10);
 
+  /**
+   * Returns the news category of a node.
+   *
+   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+   *
+   * @return \Drupal\taxonomy\Entity\Term|null News category term.
+   *   News category term.
+   */
+  public function getCategory(ContentEntityInterface $entity);
 }

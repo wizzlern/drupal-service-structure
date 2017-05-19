@@ -1,0 +1,4 @@
+services:
+  we_news.category:
+    class: \Drupal\we_news\NewsCategory
+    arguments: ['@entity_type.manager']

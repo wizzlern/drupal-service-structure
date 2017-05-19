@@ -2,8 +2,6 @@
 
 namespace Drupal\we_news;
 
-use Drupal\Core\Entity\ContentEntityInterface;
-
 /**
  * Interface for NewsCategory.
  */
@@ -59,26 +57,11 @@ interface NewsCategoryInterface {
    *   Group name.
    *
    * @return \Drupal\taxonomy\Entity\Term[]
-   *   News categories keyed by their ID.
-   */
-  public function categoryNamesByGroup($group_name);
-
-  /**
-   * Returns the news category of the current node.
+   *   News category objects keyed by their term ID.
    *
-   * @return \Drupal\taxonomy\Entity\Term|null News category term.
-   *   News category term.
+   * @throws \RuntimeException
+   *   When the specified $group_name is unknown.
    */
-  public function currentPageCategory();
-
-  /**
-   * Returns the news category of a node.
-   *
-   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
-   *
-   * @return \Drupal\taxonomy\Entity\Term|null News category term.
-   *   News category term.
-   */
-  public function entityCategory(ContentEntityInterface $entity);
+  public function categoriesByGroup($group_name);
 
 }

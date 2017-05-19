@@ -1,4 +1,0 @@
-services:
-  we_news.build:
-    class: \Drupal\we_news\NewsBuild
-    arguments: ['@entity_type.manager', '@we_news.content', '@we_news.category']

@@ -9,28 +9,20 @@
  * Implements hook_cron().
  */
 function we_news_cron() {
-  
-}
 
-/**
- * Implements hook_entity_extra_field_info().
- */
-function we_news_entity_extra_field_info() {
+  // Get news articles that are not yet archived after 1 year.
+  $threshold = strtotime('-1 year', $_SERVER['REQUEST_TIME']);
+  $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+    ->condition('type', 'news')
+    ->condition('field_news_archive', 0)
+    ->condition('created', $threshold, '<');
+  $nids = $query->execute();
 
-  $extra['node']['news']['display']['we_news_related_news'] = [
-    'label' => t('Related news articles'),
-    'weight' => 0,
-    'visible' => FALSE,
-  ];
-  return $extra;
-}
-
-/**
- * Implements hook_entity_view().
- */
-function we_news_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
-
-  if ($display->getComponent('we_news_related_news')) {
-    $build['we_news_related_news'] = ['#markup' => 'TODO Related News'];
+  // Mark news articles as archived.
+  foreach ($nids as $nid) {
+    /** @var \Drupal\node\Entity\Node $node */
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+    $node->set('field_news_archive', 1);
+    $node->save();
   }
 }

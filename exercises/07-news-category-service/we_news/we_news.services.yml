@@ -1,4 +1,0 @@
-services:
-  we_news.news_category:
-    class: \Drupal\we_news\WeNewsNewsCategory
-    arguments: ['@entity_type.manager', '@current_route_match']
