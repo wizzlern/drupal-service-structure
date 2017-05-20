@@ -1,9 +1,8 @@
 # More code, less spaghetti
 
-This code is part of a workshop developed by [Wizzlern](https://wizzlern.nl) for the [DrupalJam](https://drupaljam.nl) 2017. The Dutch annual Drupal gathering.
+This code is part of the Services in Drupal8 workshop developed by [Wizzlern](https://wizzlern.nl) for the [DrupalJam](https://drupaljam.nl) 2017. The Dutch annual Drupal gathering. The slides can be found at [Slideshare](https://www.slideshare.net/ErikStielstra/drupal-jam-2017-services).
 
 Prepare for the workshop by **downloading this code** and **setting-up a Drupal 8 site** with the included starter kit. This package contains all the code you need for the workshop. 
-
 
 ### Directory /starter-kit
 
