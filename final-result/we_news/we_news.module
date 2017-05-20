@@ -9,5 +9,5 @@
  * Implements hook_cron().
  */
 function we_news_cron() {
-  \Drupal::service('we_news.archive')->onCron();
+  \Drupal::service('we_news.archive')->archiveNews();
 }

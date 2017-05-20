@@ -18,7 +18,7 @@ interface NewsContentInterface {
    * @return \Drupal\node\NodeInterface[]
    *   News nodes.
    */
-  public function latestNews($limit = 10);
+  public function getLatestNews($limit = 10);
 
   /**
    * Returns the latest news by news categories.
@@ -31,7 +31,7 @@ interface NewsContentInterface {
    * @return \Drupal\node\NodeInterface[]
    *   News nodes.
    */
-  public function newsByCategory($categories, $limit = 10);
+  public function getNewsByCategory($categories, $limit = 10);
 
   /**
    * Returns the news category of a node.

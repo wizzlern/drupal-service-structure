@@ -26,7 +26,7 @@ class NewsContent implements NewsContentInterface {
   /**
    * {@inheritdoc}
    */
-  public function latestNews($limit = 10) {
+  public function getLatestNews($limit = 10) {
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('status', NodeInterface::PUBLISHED)
@@ -48,7 +48,7 @@ class NewsContent implements NewsContentInterface {
   /**
    * {@inheritdoc}
    */
-  public function newsByCategory($categories, $limit = 10) {
+  public function getNewsByCategory($categories, $limit = 10) {
 
     $categories = is_array($categories) ? $categories : [$categories];
 

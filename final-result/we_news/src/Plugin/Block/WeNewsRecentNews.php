@@ -62,7 +62,7 @@ class WeNewsRecentNews extends BlockBase implements ContainerFactoryPluginInterf
   public function build() {
 
     $items = [];
-    $nodes = $this->newsContent->latestNews(5);
+    $nodes = $this->newsContent->getLatestNews(5);
 
     foreach ($nodes as $node) {
       $items[] = $this->entityTypeManager

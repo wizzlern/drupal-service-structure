@@ -8,8 +8,8 @@ namespace Drupal\we_news;
 interface NewsArchiveInterface {
 
   /**
-   * Performs cron tasks for news content.
+   * Performs cron tasks for archiving news content.
    */
-  public function onCron();
+  public function archiveNews();
 
 }

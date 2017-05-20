@@ -73,7 +73,7 @@ class RelatedNews extends ExtraFieldFormatterBase implements ContainerFactoryPlu
     $category = $this->newsContent->getCategory($entity);
 
     if ($category) {
-      $news = $this->newsContent->newsByCategory($category->id(), 2);
+      $news = $this->newsContent->getNewsByCategory($category->id(), 2);
 
       $items = [];
       foreach ($news as $node) {

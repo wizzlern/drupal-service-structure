@@ -35,20 +35,12 @@ interface NewsCategoryInterface {
   const CATEGORY_GROUP_POPULAR = [self::CATEGORY_GENERAL, self::CATEGORY_SHOWBIZ, self::CATEGORY_SPORTS];
 
   /**
-   * Returns all news categories;
-   *
-   * @return string[]
-   *   News category names keyed by the term ID.
-   */
-  public function categoryNames();
-
-  /**
-   * Returns the available groups.
+   * Returns the available category groups.
    *
    * @return \Drupal\Core\StringTranslation\TranslatableMarkup[]
    *   Group names keyed by their group machine name.
    */
-  public function categoryGroups();
+  public function getCategoryGroups();
 
   /**
    * Returns the news categories that belong to a group.
@@ -62,6 +54,6 @@ interface NewsCategoryInterface {
    * @throws \RuntimeException
    *   When the specified $group_name is unknown.
    */
-  public function categoriesByGroup($group_name);
+  public function getCategoriesByGroup($group_name);
 
 }

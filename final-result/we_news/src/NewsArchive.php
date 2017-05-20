@@ -24,7 +24,7 @@ class NewsArchive implements NewsArchiveInterface {
   /**
    * {@inheritdoc}
    */
-  public function onCron() {
+  public function archiveNews() {
 
     // Get news articles that are not yet archived after 1 year.
     $threshold = strtotime('-1 year', $_SERVER['REQUEST_TIME']);

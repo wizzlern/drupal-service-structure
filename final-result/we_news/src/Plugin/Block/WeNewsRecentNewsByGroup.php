@@ -84,7 +84,7 @@ class WeNewsRecentNewsByGroup extends BlockBase implements ContainerFactoryPlugi
   public function blockForm($form, FormStateInterface $form_state) {
 
     $config = $this->configuration;
-    $options = $this->newsCategory->categoryGroups();
+    $options = $this->newsCategory->getCategoryGroups();
 
     $form['group'] = [
       '#type' => 'radios',
@@ -112,8 +112,8 @@ class WeNewsRecentNewsByGroup extends BlockBase implements ContainerFactoryPlugi
 
     $items = [];
     $group = $this->configuration['group'];
-    $categories = $this->newsCategory->categoryNamesByGroup($group);
-    $nodes = $this->newsContent->newsByCategory(array_keys($categories), 2);
+    $categories = $this->newsCategory->getCategoriesByGroup($group);
+    $nodes = $this->newsContent->getNewsByCategory(array_keys($categories), 2);
 
     foreach ($nodes as $node) {
       $items[] = $this->entityTypeManager

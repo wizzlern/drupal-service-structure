@@ -27,25 +27,7 @@ class NewsCategory implements NewsCategoryInterface {
   /**
    * {@inheritdoc}
    */
-  public function categoryNames() {
-
-    $categories = [];
-    /** @var \Drupal\taxonomy\Entity\Term $terms */
-    $terms = $this->entityTypeManager
-      ->getStorage('taxonomy_term')
-      ->loadTree(self::CATEGORY_VOCABULARY);
-
-    foreach ($terms as $term) {
-      $categories[$term->id()] = $term->label();
-    }
-
-    return $categories;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function categoryGroups() {
+  public function getCategoryGroups() {
 
     $groups = [
       'tech' => $this->t('Technology'),
@@ -58,7 +40,7 @@ class NewsCategory implements NewsCategoryInterface {
   /**
    * {@inheritdoc}
    */
-  public function categoriesByGroup($group_name) {
+  public function getCategoriesByGroup($group_name) {
 
     switch ($group_name) {
       case 'tech':
