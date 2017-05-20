@@ -21,7 +21,5 @@ class NewsArchive implements NewsArchiveInterface {
     $this->entityTypeManager = $entityTypeManager;
   }
 
-  // @todo Create a method to be used on cron.
-
 }
 

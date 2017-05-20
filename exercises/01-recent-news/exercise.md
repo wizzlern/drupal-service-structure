@@ -4,7 +4,8 @@ Organize business logic related to the news content type into a service to keep
 your code maintainable.
 
 - Study the code in Drupal\we_news\Plugin\Block\WeNewsRecentNews
-- Copy the files included in this exercise folder to your module.
+- Copy the files included in this exercise folder to your module. 
+  Note: Carefully merge files / directories that already exist.
 - Study the files you just copied.
 - Create a service for business logic related to the News content type.
   - Create methods in the service to encapsulate business logic from the recent news block.

@@ -7,6 +7,4 @@ namespace Drupal\we_news;
  */
 interface NewsArchiveInterface {
 
-  // @todo Define the public methods for NewsArchive.
-
 }
