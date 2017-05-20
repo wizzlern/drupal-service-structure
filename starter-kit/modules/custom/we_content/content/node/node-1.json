@@ -180,7 +180,7 @@
     ],
     "field_body": [
         {
-            "value": "... body ...",
+            "value": "<p>Body .. Maecenas scelerisque malesuada nunc sed malesuada. Phasellus condimentum lectus et neque pulvinar sagittis facilisis id urna. Nulla cursus dolor tincidunt posuere malesuada. Nullam auctor in risus sed pretium. Aliquam ut velit scelerisque, vehicula quam vel, sodales ex. Curabitur ullamcorper purus ullamcorper neque volutpat pellentesque.</p>",
             "format": "basic_html"
         }
     ],
@@ -191,7 +191,7 @@
     ],
     "field_summary": [
         {
-            "value": "... summary ..."
+            "value": "Summary .. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }
     ]
 }
