@@ -3,5 +3,6 @@ type: profile
 description: 'Use configuration from another Drupal site to install a Drupal instance. Suitable for advanced users.'
 core: 8.x
 version: '8.x-1.0'
+package: Wizzlern
 distribution:
   name: Wizzlern services workshop

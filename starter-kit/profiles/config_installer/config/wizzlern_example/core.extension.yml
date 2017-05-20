@@ -34,7 +34,6 @@ module:
   views_ui: 0
   we_content: 0
   we_news: 0
-  we_profile: 0
   menu_link_content: 1
   standard: 1000
 theme:
